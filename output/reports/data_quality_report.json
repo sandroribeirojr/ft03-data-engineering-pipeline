@@ -1,0 +1,230 @@
+{
+    "run_id": "20261117T193454346737Z",
+    "execution_timestamp": "2026-11-17T19:35:07.416501+00:00",
+    "total_datasets": 7,
+    "datasets": [
+        {
+            "dataset": "countries",
+            "total_records": 250,
+            "total_columns": 13,
+            "schema": {
+                "valid": true,
+                "missing_columns": [],
+                "expected_columns": [
+                    "country_iso3",
+                    "country_name",
+                    "population"
+                ]
+            },
+            "uniqueness": {
+                "valid": true,
+                "duplicate_rows": 0,
+                "columns": [
+                    "country_iso3"
+                ]
+            },
+            "null_ratio_percent": {
+                "country_iso3": 0.0,
+                "country_iso2": 0.0,
+                "country_name": 0.0,
+                "official_name": 0.0,
+                "region": 0.0,
+                "subregion": 0.0,
+                "population": 0.0,
+                "area_km2": 0.0,
+                "latitude": 0.0,
+                "longitude": 0.0,
+                "capitals_json": 0.0,
+                "languages_json": 0.0,
+                "currencies_json": 0.0
+            },
+            "valid": true,
+            "ranges": {
+                "population": {
+                    "column": "population",
+                    "minimum": 0,
+                    "maximum": null,
+                    "invalid_records": 0,
+                    "valid": true
+                },
+                "latitude": {
+                    "column": "latitude",
+                    "minimum": -90,
+                    "maximum": 90,
+                    "invalid_records": 0,
+                    "valid": true
+                },
+                "longitude": {
+                    "column": "longitude",
+                    "minimum": -180,
+                    "maximum": 180,
+                    "invalid_records": 0,
+                    "valid": true
+                }
+            }
+        },
+        {
+            "dataset": "country_capitals",
+            "total_records": 250,
+            "total_columns": 4,
+            "schema": {
+                "valid": true,
+                "missing_columns": [],
+                "expected_columns": [
+                    "country_iso3",
+                    "capital_name",
+                    "latitude",
+                    "longitude"
+                ]
+            },
+            "uniqueness": {
+                "valid": true,
+                "duplicate_rows": 0,
+                "columns": [
+                    "country_iso3",
+                    "capital_name"
+                ]
+            },
+            "null_ratio_percent": {
+                "country_iso3": 0.0,
+                "capital_name": 0.0,
+                "latitude": 0.0,
+                "longitude": 0.0
+            },
+            "valid": true,
+            "ranges": {
+                "latitude": {
+                    "column": "latitude",
+                    "minimum": -90,
+                    "maximum": 90,
+                    "invalid_records": 0,
+                    "valid": true
+                },
+                "longitude": {
+                    "column": "longitude",
+                    "minimum": -180,
+                    "maximum": 180,
+                    "invalid_records": 0,
+                    "valid": true
+                }
+            }
+        },
+        {
+            "dataset": "fact_economic_indicator",
+            "total_records": 5375,
+            "total_columns": 6,
+            "schema": {
+                "valid": true,
+                "missing_columns": [],
+                "expected_columns": [
+                    "country_iso3",
+                    "indicator_code",
+                    "year",
+                    "value"
+                ]
+            },
+            "uniqueness": {
+                "valid": true,
+                "duplicate_rows": 0,
+                "columns": [
+                    "country_iso3",
+                    "indicator_code",
+                    "year"
+                ]
+            },
+            "null_ratio_percent": {
+                "country_iso3": 0.0,
+                "indicator_code": 0.0,
+                "indicator_name": 0.0,
+                "year": 0.0,
+                "value": 5.43,
+                "unit": 0.0
+            },
+            "valid": true,
+            "ranges": {
+                "year": {
+                    "column": "year",
+                    "minimum": 2020,
+                    "maximum": 2024,
+                    "invalid_records": 0,
+                    "valid": true
+                }
+            }
+        },
+        {
+            "dataset": "economic_unmatched",
+            "total_records": 1150,
+            "total_columns": 8,
+            "schema": {
+                "valid": true,
+                "missing_columns": [],
+                "expected_columns": [
+                    "country_iso3",
+                    "indicator_code",
+                    "year",
+                    "rejection_reason"
+                ]
+            },
+            "uniqueness": {
+                "valid": true,
+                "duplicate_rows": 0,
+                "columns": [
+                    "country_iso3",
+                    "indicator_code",
+                    "year"
+                ]
+            },
+            "null_ratio_percent": {
+                "country_iso3": 0.0,
+                "country_name": 0.0,
+                "indicator_code": 0.0,
+                "indicator_name": 0.0,
+                "year": 0.0,
+                "value": 0.61,
+                "unit": 0.0,
+                "rejection_reason": 0.0
+            },
+            "valid": true,
+            "ranges": {
+                "year": {
+                    "column": "year",
+                    "minimum": 2020,
+                    "maximum": 2024,
+                    "invalid_records": 0,
+                    "valid": true
+                }
+            }
+        },
+        {
+            "dataset": "referential_integrity",
+            "orphan_records": 0,
+            "source_records": 6525,
+            "matched_records": 5375,
+            "unmatched_records": 1150,
+            "reconciliation_difference": 0,
+            "valid": true
+        },
+        {
+            "dataset": "world_bank_extraction",
+            "extracted_records": 6650,
+            "prepared_records": 6525,
+            "excluded_records": 125,
+            "exclusion_reasons": {
+                "invalid_iso3": 125,
+                "invalid_year_only": 0
+            },
+            "valid": true
+        },
+        {
+            "dataset": "rest_countries_extraction",
+            "extracted_records": 254,
+            "prepared_records": 250,
+            "excluded_records": 4,
+            "exclusion_reasons": {
+                "invalid_iso3": 4
+            },
+            "valid": true
+        }
+    ],
+    "overall_status": "PASSED"
+}
